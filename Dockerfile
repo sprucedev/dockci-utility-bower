@@ -1,4 +1,10 @@
 FROM alpine:3.2
-RUN apk add --update ruby=2.2.2-r0 && rm -rf /var/cache/apk/*
-RUN gem install sass --version '3.4.17' --no-ri --no-rdoc && \
-    rm /usr/lib/ruby/gems/2.2.0/cache/*
+RUN apk add --update nodejs=0.12.2-r0 && rm -rf /var/cache/apk/*
+RUN npm install -g bower@1.5.2 && \
+    rm -rf /tmp/npm-* /root/.npm
+
+RUN adduser --disabled-password --home /work work
+USER work
+WORKDIR /work
+
+CMD ["bower", "install"]
