@@ -7,7 +7,7 @@ DockCI premade utility to download dependencies using the Bower package manager
     - Set the slug to something like `bower`
     - Set the name to something like `Bower`
 - Manually create a build
-    - Use `HEAD` as the git reference
+    - Use the latest version as the git reference
 - Modify your `dockci.yaml`:
 ```
 utilities:
